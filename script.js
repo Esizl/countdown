@@ -1,30 +1,32 @@
-// var countDownDate = new Date("Jun 22, 2021 6:00:00").getTime();
-var countDownDate = new Date("Jun 20, 2021 12:15:00").getTime();
+var countDownDate = new Date("Jun 22, 2021 2:00:00").getTime();
 
-// Update the count down every 1 second
 var x = setInterval(function() {
 
-  // Get today's date and time
+  var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = 'https://countdown1.esizl.repl.co/assets/devil1.png';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
   var now = new Date().getTime();
     
-  // Find the distance between now and the count down date
   var distance = countDownDate - now;
     
-  // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  // Output the result in an element with id="demo"
   document.getElementById("timer").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
     
-  // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    setInterval(function() {
-      document.getElementById("timer").innerHTML = "TIMES UP <3";
-    }, 1000)
+    document.getElementById("timer").innerHTML = "TIMES UP <3";
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = 'https://countdown1.esizl.repl.co/assets/devil2.png';
+    document.getElementsByTagName('head')[0].appendChild(link);
   }
 }, 1000)
